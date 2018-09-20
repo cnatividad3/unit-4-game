@@ -49,14 +49,25 @@ $(document).ready(function () {
     $("#total-score").text(totalScore);
   });
 
+  
   //conditions- if win/lose add to count
   if (totalScore === randomNumber) {
     totalWins++;
     alert("Winner winner!");
+    reset();
   } else if (totalScore > randomNumber) {
     alert("You Lose!");
     totalLosses++;
+    reset();
   };
 
+  function reset(){
+    randomNumber = Math.floor(Math.random() * 102) + 19;
+    blueValue = Math.floor(Math.random() * 12) + 1;
+    greenValue = Math.floor(Math.random() * 12) + 1;
+    whiteValue = Math.floor(Math.random() * 12) + 1;
+    redValue = Math.floor(Math.random() * 12) + 1;
+  }
+  
 
 });
